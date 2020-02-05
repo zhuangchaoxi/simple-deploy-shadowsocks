@@ -13,4 +13,6 @@ mv shadowsocks.json ${shadow_cfg}
 sed -i "s/\"server\":\".*\"/\"server\":\"${ip}\"/g" ${shadow_cfg}
 sed -i "s/\"server_port\":.*/\"server_port\":${port}/g" ${shadow_cfg}
 sed -i "s/\"password\":\".*\"/\"password\":\"${password}\"/g" ${shadow_cfg}
+firewall-cmd --zone=public --add-port=${port}/tcp --permanent
+firewall-cmd --reload
 echo -e "complete."
