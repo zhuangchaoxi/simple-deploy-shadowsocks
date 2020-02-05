@@ -1,0 +1,9 @@
+{
+  "server":"xxx.xxx.xxx.xxx",
+  "server_port":8081,
+  "local_port":1080,
+  "password":"xxxxxx",
+  "timeout":600,
+  "method":"aes-256-cfb",
+  "mode": "udp"
+}
