@@ -18,6 +18,6 @@ firewall-cmd --zone=public --add-port=${port}/tcp --permanent
 firewall-cmd --reload
 # install bbr
 wget –no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
-chmod +x bbr.sh
+chmod +x *.sh
 ./bbr.sh
 echo -e "complete."
