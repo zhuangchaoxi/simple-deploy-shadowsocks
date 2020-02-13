@@ -13,6 +13,11 @@ mv shadowsocks.json ${shadow_cfg}
 sed -i "s/\"server\":\".*\"/\"server\":\"${ip}\"/g" ${shadow_cfg}
 sed -i "s/\"server_port\":.*,/\"server_port\":${port},/g" ${shadow_cfg}
 sed -i "s/\"password\":\".*\"/\"password\":\"${password}\"/g" ${shadow_cfg}
+# open port
 firewall-cmd --zone=public --add-port=${port}/tcp --permanent
 firewall-cmd --reload
+# install bbr
+wget –no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh
+chmod +x bbr.sh
+./bbr.sh
 echo -e "complete."
